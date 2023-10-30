@@ -1,241 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  <header class="header__block">
-    <div class="container__wrapper">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header__block">
+      <div class="container__wrapper">
+        <div class="navbar__block">
+          <div class="navbar__logo">
+            <img src="./img/logo.png" alt="error" />
+          </div>
 
-      <div class="navbar__block">
-        <div class="navbar__logo">
-          <img src="./img/logo.png" alt="error">
-        </div>
-
-        <div class="navbar__btns">
+          <div class="navbar__btns">
             <a class="nav-link text-white" id="showUsername">No user</a>
-          <button class="nav__signin" id="registerUser-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Sign in
-          </button>
-          <button class="nav__login" id="loginUser-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Login
-          </button>
-          <button class="nav__reg" id="logoutUser-btn">
-            Logout
-          </button>
-        </div>
-      </div>
-
-      <div class="header__wrapper">
-        <div class="header__main">
-          <h1 class="header__title">
-            Movie website
-          </h1>
-        </div>
-  
-        <!--* carousel -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper" id="swiper_movie_list">
-  
+            <button
+              class="nav__signin"
+              id="registerUser-modal"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Sign in
+            </button>
+            <button
+              class="nav__login"
+              id="loginUser-modal"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+            >
+              Login
+            </button>
+            <button class="nav__reg" id="logoutUser-btn">Logout</button>
           </div>
-          <!-- *Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-
-  <main class="main__block">
-    <div class="container__wrapper">
-      
-      <div class="main__navbar">
-        <h1 class="main__navbar_title">
-          Movie List
-        </h1>
-
-
-        <div class="dropdowns__wrapper">
-
-          <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false">
-              janr
-            </button>
-            <ul class="dropdown-menu dropdown-menu dropdown_menu_janr">
-              <li><a class="dropdown-item text-black" id="category" url="./img/tokyo.png" title="Tokyo" href="#">Tokyo</a></li>
-              <li><a class="dropdown-item text-black" id="category" url="./img/miyagi.png" title="Miyagi" href="#">Miyagi</a></li>
-              <li><a class="dropdown-item text-black" id="category" url="./img/hokaido.png" title="Hokaido" href="#">Hokaido</a></li>
-            </ul>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <button class="btn dropdown-toggle text-white" data-bs-toggle="dropdown" aria-expanded="false">
-              date
-            </button>
-            <ul class="dropdown-menu dropdown-menu dropdown_menu_date">
-              <li><a class="dropdown-item-date text-black" id="category" url="./img/tokyo.png" title="Tokyo" href="#">Tokyo</a></li>
-              <li><a class="dropdown-item text-black" id="category" url="./img/miyagi.png" title="Miyagi" href="#">Miyagi</a></li>
-              <li><a class="dropdown-item text-black" id="category" url="./img/hokaido.png" title="Hokaido" href="#">Hokaido</a></li>
-            </ul>
-          </li>
-
         </div>
 
+        <div class="header__wrapper">
+          <div class="header__main">
+            <h1 class="header__title">Movie website</h1>
+          </div>
 
-        <form class="d-flex w-100 text-white search__form" role="search">
-          <input class="form-control me-2 text-black search_inp" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
-        </form>
-      </div>
-
-      <!--* content -->
-    <div class="d-flex flex-wrap justify-content-between" id="movie-list">
-      
-      <div class="movie_card">
-        <div class="movie__image">
-          <img src="./img/poster.jfif" alt="">
-        </div>
-        <div class="cart__content">
-          <h4 class="cart__title">
-            Avengers
-          </h4>
-          <div class="subtitles__wrapper">
-            <p class="card__janr">
-              Superheroes
-            </p>
-            <p class="card__date">
-              2012
-            </p>
+          <!--* carousel -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="swiper_movie_list"></div>
+            <!-- *Add Pagination -->
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
-    
+      <!-- toggle theme start -->
+      <button class="night-theme-btn" id="night-theme-btn">
+        <svg
+          class="night-theme__icon night-theme__icon_sun"
+          viewBox="0 0 64 64"
+        >
+          <g>
+            <circle
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              cx="32.003"
+              cy="32.005"
+              r="16.001"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M12.001,31.997c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4
+      s1.789,4,4,4h4C10.212,35.997,12.001,34.208,12.001,31.997z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M12.204,46.139l-2.832,2.833c-1.563,1.562-1.563,4.094,0,5.656
+      c1.562,1.562,4.094,1.562,5.657,0l2.833-2.832c1.562-1.562,1.562-4.095,0-5.657C16.298,44.576,13.767,44.576,12.204,46.139z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M32.003,51.999c-2.211,0-4,1.789-4,4V60c0,2.211,1.789,4,4,4
+      s4-1.789,4-4l-0.004-4.001C36.003,53.788,34.21,51.999,32.003,51.999z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M51.798,46.143c-1.559-1.566-4.091-1.566-5.653-0.004
+      s-1.562,4.095,0,5.657l2.829,2.828c1.562,1.57,4.094,1.562,5.656,0s1.566-4.09,0-5.656L51.798,46.143z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M60.006,27.997l-4.009,0.008
+      c-2.203-0.008-3.992,1.781-3.992,3.992c-0.008,2.211,1.789,4,3.992,4h4.001c2.219,0.008,4-1.789,4-4
+      C64.002,29.79,62.217,27.997,60.006,27.997z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M51.798,17.859l2.828-2.829c1.574-1.566,1.562-4.094,0-5.657
+      c-1.559-1.567-4.09-1.567-5.652-0.004l-2.829,2.836c-1.562,1.555-1.562,4.086,0,5.649C47.699,19.426,50.239,19.418,51.798,17.859z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M32.003,11.995c2.207,0.016,4-1.789,4-3.992v-4
+      c0-2.219-1.789-4-4-4c-2.211-0.008-4,1.781-4,3.993l0.008,4.008C28.003,10.206,29.792,11.995,32.003,11.995z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="#231F20"
+              d="M12.212,17.855c1.555,1.562,4.079,1.562,5.646-0.004
+      c1.574-1.551,1.566-4.09,0.008-5.649l-2.829-2.828c-1.57-1.571-4.094-1.559-5.657,0c-1.575,1.559-1.575,4.09-0.012,5.653
+      L12.212,17.855z"
+            />
+          </g>
+        </svg>
 
-    </div>
+        <svg
+          class="night-theme__icon night-theme__icon_moon"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z"
+            fill="#323232"
+          />
+        </svg>
+      </button>
+      <!-- toggle theme end -->
+    </header>
 
+    <main class="main__block">
+      <div class="container__wrapper">
+        <div class="main__navbar">
+          <h1 class="main__navbar_title">Movie List</h1>
 
-    </div>
-  </main>
+          <div class="dropdowns__wrapper">
+            <li class="nav-item dropdown">
+              <button
+                class="btn dropdown-toggle text-white"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                janr
+              </button>
+              <ul class="dropdown-menu dropdown-menu dropdown_menu_janr">
+                <li>
+                  <a
+                    class="dropdown-item text-black"
+                    id="category"
+                    url="./img/tokyo.png"
+                    title="Tokyo"
+                    href="#"
+                    >Tokyo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-black"
+                    id="category"
+                    url="./img/miyagi.png"
+                    title="Miyagi"
+                    href="#"
+                    >Miyagi</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-black"
+                    id="category"
+                    url="./img/hokaido.png"
+                    title="Hokaido"
+                    href="#"
+                    >Hokaido</a
+                  >
+                </li>
+              </ul>
+            </li>
 
+            <li class="nav-item dropdown">
+              <button
+                class="btn dropdown-toggle text-white"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                date
+              </button>
+              <ul class="dropdown-menu dropdown-menu dropdown_menu_date">
+                <li>
+                  <a
+                    class="dropdown-item-date text-black"
+                    id="category"
+                    url="./img/tokyo.png"
+                    title="Tokyo"
+                    href="#"
+                    >Tokyo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-black"
+                    id="category"
+                    url="./img/miyagi.png"
+                    title="Miyagi"
+                    href="#"
+                    >Miyagi</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-black"
+                    id="category"
+                    url="./img/hokaido.png"
+                    title="Hokaido"
+                    href="#"
+                    >Hokaido</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </div>
 
-  <!--* pagination -->
-  <div class="d-flex w-100 justify-content-center">
-    <a class="btn btn-dark m-1" href="#" aria-label="Previous" id="prev-page-btn">
-      <span aria-hidden="true">&laquo;</span>
-    </a>
-    <a class="btn btn-dark m-1" href="#" aria-label="Next" id="next-page-btn">
-      <span aria-hidden="true">&raquo;</span>
-    </a>
-  </div>  
-
-
-
-
-
-  <!--* modal for users -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Account</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <form class="d-flex w-100 text-white search__form" role="search">
+            <input
+              class="form-control me-2 text-black search_inp"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="search-btn"
+            >
+              Search
+            </button>
+          </form>
         </div>
-        <div class="modal-body">
+
+        <!--* content -->
+        <div class="d-flex flex-wrap justify-content-between" id="movie-list">
+          <div class="movie_card">
+            <div class="movie__image">
+              <img src="./img/poster.jfif" alt="" />
+            </div>
+            <div class="cart__content">
+              <h4 class="cart__title">Avengers</h4>
+              <div class="subtitles__wrapper">
+                <p class="card__janr">Superheroes</p>
+                <p class="card__date">2012</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--* pagination -->
+    <div class="d-flex w-100 justify-content-center">
+      <a
+        class="btn btn-dark m-1"
+        href="#"
+        aria-label="Previous"
+        id="prev-page-btn"
+      >
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+      <a class="btn btn-dark m-1" href="#" aria-label="Next" id="next-page-btn">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </div>
+
+    <!--* modal for users -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Account</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
             <!--* for register -->
-            <div class="d-flex flex-column w-100 align-items-center" id="registerUser-block">
-                <h2>Register user</h2>
+            <div
+              class="d-flex flex-column w-100 align-items-center"
+              id="registerUser-block"
+            >
+              <h2>Register user</h2>
 
-                <input type="text" id="reg-username" placeholder="Username" class="mb-2 w-100 form-control">
+              <input
+                type="text"
+                id="reg-username"
+                placeholder="Username"
+                class="mb-2 w-100 form-control"
+              />
 
-                <input type="number" id="reg-age" placeholder="Age" class="mb-2 w-100 form-control">
+              <input
+                type="number"
+                id="reg-age"
+                placeholder="Age"
+                class="mb-2 w-100 form-control"
+              />
 
-                <input type="password" id="reg-password" placeholder="Password" class="mb-2 w-100 form-control">
+              <input
+                type="password"
+                id="reg-password"
+                placeholder="Password"
+                class="mb-2 w-100 form-control"
+              />
 
-                <input type="password" id="reg-passwordConfirm" placeholder="Password Confirmation" class="mb-2 w-100 form-control">
+              <input
+                type="password"
+                id="reg-passwordConfirm"
+                placeholder="Password Confirmation"
+                class="mb-2 w-100 form-control"
+              />
 
-                <div>
-                    <input type="checkbox" id="isAdmin">
-                    <label for="isAdmin">Admin</label>
-                </div>
+              <div>
+                <input type="checkbox" id="isAdmin" />
+                <label for="isAdmin">Admin</label>
+              </div>
             </div>
 
             <!--* for login -->
-            <div class="d-flex flex-column w-100 align-items-center" id="loginUser-block">
-                <h2>Login user</h2>
+            <div
+              class="d-flex flex-column w-100 align-items-center"
+              id="loginUser-block"
+            >
+              <h2>Login user</h2>
 
-                <input type="text" id="login-username" placeholder="Username" class="mb-2 w-100 form-control">
+              <input
+                type="text"
+                id="login-username"
+                placeholder="Username"
+                class="mb-2 w-100 form-control"
+              />
 
-                <input type="password" id="login-password" placeholder="Password" class="mb-2 w-100 form-control">
+              <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+                class="mb-2 w-100 form-control"
+              />
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" id="registerUser-btn">
+              Register
+            </button>
+
+            <button type="button" class="btn btn-dark" id="loginUser-btn">
+              Login
+            </button>
+          </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-dark" id="registerUser-btn">Register</button>
+      </div>
+    </div>
 
-            <button type="button" class="btn btn-dark" id="loginUser-btn">Login</button>
+    <!--* admin panel -->
+    <div class="w-100 justify-content-center text-center">
+      <div class="mt-5 d-flex flex-column w-100" id="admin-panel">
+        <h2>Admin panel</h2>
+
+        <h3>Add movie to Swiper</h3>
+        <input
+          type="url"
+          placeholder="Image url for swiper"
+          class="mb-2 w-50 m-auto"
+          id="movie-swiper-image"
+        />
+
+        <button class="btn btn-dark w-50 m-auto add-movie-btn">
+          Add Movie to swiper
+        </button>
+
+        <h3>Add movie to Movie List</h3>
+
+        <input
+          type="url"
+          placeholder="Image url"
+          class="mb-2 w-50 m-auto"
+          id="movie-image"
+        />
+        <input
+          type="text"
+          placeholder="Title"
+          class="mb-2 w-50 m-auto"
+          id="movie-title"
+        />
+        <input
+          type="text"
+          placeholder="Janr"
+          class="mb-2 w-50 m-auto"
+          id="movie-janr"
+        />
+        <input
+          type="number"
+          placeholder="date"
+          class="mb-2 w-50 m-auto"
+          id="movie-date"
+        />
+
+        <button class="btn btn-dark w-50 m-auto add-movielist-btn">
+          Add Movie to list
+        </button>
+        <button class="btn btn-dark w-50 m-auto save-changes-btn">
+          Save Changes
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="contact">Contact Us</div>
+      <div>099903456</div>
+      <br />
+      <a href="mailto:youremail@example.com" class="email-button">Email Us</a>
+      <div class="connect-icons">
+        <div class="connect-text">Connect with vs</div>
+
+        <div>
+          <!-- Изображения вместо иконок -->
+          <img src="./img/facebook.png" alt="Facebook" class="icon-img" />
+          <img
+            src="./img/free-icon-twitter-733579.png"
+            alt="Twitter"
+            class="icon-img"
+          />
+          <img
+            src="./img/free-icon-instagram-1384063.png"
+            alt="Instagram"
+            class="icon-img"
+          />
+          <img
+            src="./img/free-icon-youtube-1384060.png"
+            alt="YouTube"
+            class="icon-img"
+          />
+          <img
+            src="./img/free-icon-pinterest-220214.png"
+            alt="Pinterest"
+            class="icon-img"
+          />
         </div>
-    </div>
-    </div>
-</div>
-  
-
-<!--* admin panel -->
-<div class="w-100 justify-content-center text-center">
-  <div class="mt-5 d-flex flex-column w-100" id="admin-panel">
-    <h2>Admin panel</h2>
-
-    <h3>Add movie to Swiper</h3>
-    <input type="url" placeholder="Image url for swiper" class="mb-2 w-50 m-auto" id="movie-swiper-image">
-    
-    <button class="btn btn-dark w-50 m-auto add-movie-btn">Add Movie to swiper</button>
-
-
-    <h3>Add movie to Movie List</h3>
-
-    <input type="url" placeholder="Image url" class="mb-2 w-50 m-auto" id="movie-image">
-    <input type="text" placeholder="Title" class="mb-2 w-50 m-auto" id="movie-title">
-    <input type="text" placeholder="Janr" class="mb-2 w-50 m-auto" id="movie-janr">
-    <input type="number" placeholder="date" class="mb-2 w-50 m-auto" id="movie-date">
-    
-    <button class="btn btn-dark w-50 m-auto add-movielist-btn">Add Movie to list</button>
-    <button class="btn btn-dark w-50 m-auto save-changes-btn">Save Changes</button>
-
-
-
-
-
-
-    
-  </div>
-</div>
-
-
-
-
-
-
-
-
-<footer>
-        <div class="contact">Something</div>
-        <div><b>Contact Us</b></div>
-        <div>099903456</div>
-        
-        <a href="mailto:youremail@example.com" class="email-button">Email Us</a>
-        <div>&copy; 2023 Something All Right Reserved</div>
+      </div>
+      <div class="footer-left">
+        <h2>Films</h2>
+        <p>Now Showing</p>
+        <p>Tickets</p>
+        <p>Premieres</p>
+        <p>Ratings</p>
+        <p>Recommendations</p>
+        <p>Trailers</p>
+        <p>Cast & Crew</p>
+        <p>Archives</p>
+        <p>Film Festivals</p>
+      </div>
+      <div>&copy; 2023 Something All Right Reserved</div>
     </footer>
 
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <script src="./js/main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

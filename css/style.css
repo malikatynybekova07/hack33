@@ -35,7 +35,8 @@ li {
   height: 700px;
 }
 .header__block {
-  background: url(../img/bg.png) no-repeat center top / cover;
+  background: url(https://i.pinimg.com/564x/da/3a/4d/da3a4d453595217222904e1f51449444.jpg)
+    no-repeat center top / cover;
   height: 900px;
 }
 .header__title {
@@ -220,4 +221,122 @@ footer {
   text-decoration: none;
   margin-top: 10px;
   display: inline-block;
+}
+
+/* toggle theme start */
+.night-theme-btn {
+  position: fixed;
+  right: 30px;
+  top: 90px;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgba(71, 135, 209, 0.5);
+  transition: fulter 0.4s background-color 0.4s;
+  cursor: pointer;
+}
+
+.night-theme-btn:hover {
+  filter: brightness(120%);
+}
+
+.night-theme-btn:hover {
+  filter: brightness(80%);
+}
+
+.night-theme__icon {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.night-theme__icon circle,
+.night-theme__icon path {
+  fill: black;
+}
+
+.night-theme__icon_moon {
+  opacity: 1;
+}
+
+body {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+body.night-theme {
+  background-color: black;
+  color: white;
+}
+
+body.night-theme .night-theme-btn {
+  background-color: rgba(226, 226, 77, 0.5);
+}
+
+body.night-theme .night-theme__icon_moon {
+  opacity: 0;
+}
+
+body.night-theme .night-theme__icon_sun {
+  opacity: 1;
+}
+/* toggle theme end */
+footer {
+  background-color: black;
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}
+
+/* Стили для контактной информации */
+.contact {
+  font-weight: bold;
+}
+
+/* Стили для кнопки Email us */
+.email-button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.connect-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.connect-text {
+  margin-right: 10px;
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+
+.footer-left {
+  text-align: left;
+  margin-top: -340px;
+}
+
+.footer-left h2 {
+  font-weight: bold;
+  margin: 19px 0;
+}
+
+.footer-left p {
+  margin: 5px 0;
 }
